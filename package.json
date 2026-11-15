@@ -1,0 +1,13 @@
+{
+  "name": "aidoctor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI 智能诊疗助手 —— 前端（原生 JS）+ 纯 JDK 后端",
+  "scripts": {
+    "lint": "eslint \"*.js\"",
+    "lint:fix": "eslint \"*.js\" --fix"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}

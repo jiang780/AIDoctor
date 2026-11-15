@@ -84,6 +84,40 @@ AIDoctor/
 - **AI 问诊 / 用药安全**：症状自查、AI 咨询、用药冲突与禁忌提示。
 - **IP 助手挂件**：随页面场景轮换弹出健康建议气泡，可点击进入问诊。
 
+## 代码规范与校验
+
+仓库内置**可执行的风格校验配置**，提交前跑一遍即可自查。
+
+### 1. 统一编辑器格式（`.editorconfig`）
+主流编辑器（VS Code、IDEA）安装 EditorConfig 插件（多数已内置）后，会自动按 `.editorconfig` 统一格式：
+
+- Java 4 空格缩进；JS / JSON / CSS / HTML 2 空格缩进
+- UTF-8、LF 换行、行尾去空格、文件末尾保留换行
+- `.bat` / `.ps1` 保持 Windows 原生 CRLF
+
+### 2. 前端 JS（ESLint）
+依赖 Node.js 18+：
+
+```bash
+npm install        # 安装 eslint（写入 devDependencies）
+npm run lint       # 检查 app.js / script.js / assistant-pet.js
+npm run lint:fix   # 自动修复可修复项
+```
+
+配置见 `.eslintrc.json`（浏览器环境、ES2021、`eslint:recommended` + 适度规则）。
+
+### 3. 后端 Java（Checkstyle）
+依赖 JDK 11+；首次运行会自动下载 Checkstyle（约 20MB，需联网）：
+
+```bash
+# Windows
+tools\checkstyle\run_checkstyle.bat
+# macOS / Linux
+bash tools/checkstyle/run_checkstyle.sh
+```
+
+配置见 `checkstyle.xml`（缩进、命名、空行、行长等基础规则，`severity=warning`）。
+
 ## 注意事项
 
 - 本项目为演示 / 学习用途，**不构成任何医疗诊断或治疗建议**，请以专业医生意见为准。

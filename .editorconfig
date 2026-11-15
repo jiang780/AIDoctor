@@ -1,0 +1,31 @@
+root = true
+
+# 统一基础格式：所有文件 UTF-8、LF 换行、行尾去空格、文件末尾保留换行
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+
+# Java：4 空格缩进
+[*.java]
+indent_size = 4
+
+# 前端：2 空格缩进
+[*.{js,jsx,json,css,html,yml,yaml}]
+indent_size = 2
+
+# Markdown：保留段尾双空格（换行符），不强制去尾空格
+[*.{md,markdown}]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# Windows 批处理 / PowerShell 保持 CRLF（Windows 原生要求）
+[*.{bat,cmd,ps1}]
+end_of_line = crlf
+indent_size = 2
+
+# Makefile 用 Tab
+[Makefile]
+indent_style = tab

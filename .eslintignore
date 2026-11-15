@@ -1,0 +1,7 @@
+node_modules
+libs
+images
+dist
+out
+*.min.js
+*.bundle.js

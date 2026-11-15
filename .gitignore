@@ -44,3 +44,7 @@ db/*backup*
 # 运行时日志与开发截图（非项目产物）
 logs/
 samples/
+# 前端依赖（npm install 生成）
+node_modules/
+# Checkstyle 运行期自动下载的 jar（不入库）
+tools/checkstyle/*.jar
