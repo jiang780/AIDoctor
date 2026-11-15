@@ -48,3 +48,8 @@ samples/
 node_modules/
 # Checkstyle 运行期自动下载的 jar（不入库）
 tools/checkstyle/*.jar
+# 非源码交付物（设计素材 / 文档 / 宣传图，本地保留、不入库）
+AI智能药箱IP小人素材 (3).jpeg
+说明书_20261027213833_55860_11.jpg
+提纲.docx
+宣传.png
