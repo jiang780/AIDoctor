@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>关于我们 - AIDoctor · AI 智能诊疗助手</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body data-page="about">
+    <div id="appHeader" data-strip="1"></div>
+    <main class="shell full">
+      <section class="main-panel" style="padding:0;background:transparent;box-shadow:none">
+        <div class="back-row">
+          <a class="back-btn" href="javascript:history.back()">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+            返回
+          </a>
+          <a class="back-btn" href="index.html">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+            回到首页
+          </a>
+        </div>
+        <div class="about-hero about-hero-split">
+          <div class="about-hero-copy">
+          <h1>AIDoctor · AI 智能诊疗助手</h1>
+          <p>
+            目标很窄：在去医院之前，先把「可能是什么、要不要紧、家里那盒药能不能吃」这三件事弄清楚。
+            资料来自公开的常见病资料与药品说明书，判断由规则和模型一起给出；写错的地方，欢迎直接指出来。
+          </p>
+          </div>
+          <img class="about-hero-img" src="images/care-team.jpg" alt="医疗团队协作分析患者资料" />
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="fc-head">
+              <span class="fc-icon"><svg class="ico" style="width:17px;height:17px"><use href="#i-virus"></use></svg></span>
+              <h3>疾病百科</h3>
+            </div>
+            <p>12 大类 32 种常见病。每种写清怎么来的、什么表现、什么情况别拖。</p>
+          </div>
+          <div class="feature-card">
+            <div class="fc-head">
+              <span class="fc-icon"><svg class="ico" style="width:17px;height:17px"><use href="#i-box"></use></svg></span>
+              <h3>查找药品</h3>
+            </div>
+            <p>154 种常用药，按药名或症状都能找。中成药、西药分开标，价格仅供参考。</p>
+          </div>
+          <div class="feature-card">
+            <div class="fc-head">
+              <span class="fc-icon"><svg class="ico" style="width:17px;height:17px"><use href="#i-search"></use></svg></span>
+              <h3>拍照识药</h3>
+            </div>
+            <p>拍药盒正面，或者把说明书上的字粘进来，按匹配度列出候选。</p>
+          </div>
+          <div class="feature-card">
+            <div class="fc-head">
+              <span class="fc-icon"><svg class="ico" style="width:17px;height:17px"><use href="#i-chat"></use></svg></span>
+              <h3>智能医生</h3>
+            </div>
+            <p>先由 AI 一条条问，判断不了可以转真人医生，按科室分。</p>
+          </div>
+          <div class="feature-card">
+            <div class="fc-head">
+              <span class="fc-icon"><svg class="ico" style="width:17px;height:17px"><use href="#i-user"></use></svg></span>
+              <h3>健康档案</h3>
+            </div>
+            <p>过敏史、慢性病这些录一次，之后问诊自动带上，不用每次重说。</p>
+          </div>
+          <div class="feature-card">
+            <div class="fc-head">
+              <span class="fc-icon"><svg class="ico" style="width:17px;height:17px"><use href="#i-feedback"></use></svg></span>
+              <h3>反馈闭环</h3>
+            </div>
+            <p>写错了、不好用、想加功能，直接提。会在后台一条条回。</p>
+          </div>
+        </div>
+        <div class="about-hero" style="margin-top:24px;background:#f7fbfd">
+          <h1 style="font-size:20px">免责声明</h1>
+          <p style="font-size:13px">
+            本平台提供的病种资料、药品信息与 AI 回答均来自公开资料与内置知识库，仅用于健康科普与辅助参考，不构成医疗诊断或处方建议。
+            如出现持续高热、胸痛、呼吸困难、意识改变、剧烈腹痛等表现，请立即前往正规医疗机构就诊。
+          </p>
+        </div>
+      </section>
+    </main>
+    <div id="appFooter"></div>
+    <script src="app.js"></script>
+    <script src="assistant-pet.js" defer></script>
+  </body>
+</html>

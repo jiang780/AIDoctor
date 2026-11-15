@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>诊断结果 - AI 智能医生</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <div class="logo">
+          <span class="logo-mark">+</span>
+          <span>AIDoctor</span>
+        </div>
+        <nav class="nav">
+          <a href="index.html">首页</a>
+          <a href="medicine.html">药品</a>
+          <a href="disease.html">病种</a>
+          <a href="doctor.html">智能医生</a>
+        </nav>
+        <div class="header-actions">
+          <a class="nav-button" href="doctor.html">立即问诊</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-banner has-photo">
+        <div class="container">
+          <span class="eyebrow">智能医生</span>
+          <h1>诊断结果</h1>
+        </div>
+      </section>
+
+      <section class="content-section page-section">
+        <div class="container doctor-layout">
+          <div class="doctor-box">
+            <div class="result-box" id="diagnosisResultBox">
+              <h3>诊断结果</h3>
+              <p>暂无诊断结果，请先进行诊断。</p>
+            </div>
+
+            <div class="result-box" id="aiResultBox">
+              <h3>AI 健康问答</h3>
+              <p>暂无 AI 建议，请先提交健康问答。</p>
+            </div>
+
+            <a class="primary-btn full" href="doctor.html">返回重新问诊</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© 2026 AIDoctor · 健康管理平台</div>
+        <div>AI诊断仅供参考，严重症状请及时就医</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="assistant-pet.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首页 - AIDoctor · AI 智能诊疗助手</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body data-page="site-home">
+    <div id="appHeader" data-strip="1"></div>
+    <main class="shell full">
+      <section class="main-panel" style="padding:0;background:transparent;box-shadow:none">
+        <div class="home-hero">
+          <div class="hero-copy">
+            <span class="hero-label">常见病自查 · 用药核对</span>
+            <h1>说清哪里不舒服，<em>再决定</em>要不要去医院</h1>
+            <p>
+              按部位点、按感觉选，不用先想好怎么描述。
+              给出可能的方向、家里现有的药能不能用，以及哪些情况必须去门诊。
+            </p>
+            <div class="hero-actions">
+              <a href="doctor.html" class="btn btn-primary">开始问诊</a>
+              <a href="medicine.html" class="btn btn-ghost">查看药品</a>
+              <a href="identify.html" class="btn btn-ghost">拍照识药</a>
+            </div>
+            <ul class="hero-stats">
+              <li><strong>32</strong><span>类常见病</span></li>
+              <li><strong>154</strong><span>种常用药</span></li>
+              <li><strong>7×24</strong><span>随时能查</span></li>
+            </ul>
+          </div>
+          <div class="hero-panel">
+            <div class="assistant-card">
+              <div class="ac-head">
+                <div class="assistant-head">
+                  <span class="chip-ok">实时评估</span>
+                  <button id="healthRefreshBtn" class="refresh-btn" type="button" aria-label="刷新健康建议"><svg class="ico "><use href="#i-refresh"></use></svg></button>
+                </div>
+                <h3>今日健康助手</h3>
+              </div>
+              <div id="healthAssistantContent"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dose-band" id="homeDoses"></div>
+
+
+
+        <div class="home-banner">
+          <img src="images/hero-medical.jpg" alt="专业医疗团队提供在线健康支持" />
+          <div class="home-banner-copy">
+            <span class="hb-tag">症状 → 判断 → 用药</span>
+            <h2>从说出症状，到拿到药名</h2>
+            <p>中间不用换四个网站，也不用自己判断该信哪一条。</p>
+            <a href="doctor.html" class="btn btn-light">从头问一遍</a>
+          </div>
+        </div>
+
+        <div class="home-choices">
+          <div class="choices-title">
+            <h2>你现在要做什么？</h2>
+            <p>九件事，点哪个都行</p>
+          </div>
+          <div class="choice-grid2">
+            <a class="choice-card2" href="medicine.html">
+              <span class="ci"><svg class="ico "><use href="#i-pill"></use></svg></span>
+              <h3>常见药品</h3>
+              <p>退烧、感冒、抗感染，154 种药的用法用量</p>
+              <span class="cc-enter">进入 <span class="ar">→</span></span>
+            </a>
+            <a class="choice-card2" href="disease.html">
+              <span class="ci"><svg class="ico "><use href="#i-list"></use></svg></span>
+              <h3>病种速查</h3>
+              <p>上呼吸道感染、胃炎、支气管炎，起因和该挂哪个科</p>
+              <span class="cc-enter">进入 <span class="ar">→</span></span>
+            </a>
+            <a class="choice-card2" href="doctor.html">
+              <span class="ci"><svg class="ico "><use href="#i-robot"></use></svg></span>
+              <h3>智能医生</h3>
+              <p>说不清楚也没关系，一步步问出来</p>
+              <span class="cc-enter">进入 <span class="ar">→</span></span>
+            </a>
+            <a class="choice-card2" href="identify.html">
+              <span class="ci"><svg class="ico "><use href="#i-camera"></use></svg></span>
+              <h3>拍照识药</h3>
+              <p>拍药盒正面，认出来是什么药、还能不能吃</p>
+              <span class="cc-enter">进入 <span class="ar">→</span></span>
+            </a>
+            <a class="choice-card2" href="cabinet.html">
+              <span class="ci"><svg class="ico "><use href="#i-box"></use></svg></span>
+              <h3>家庭药箱</h3>
+              <p>在吃的药录进来，几点吃、剩几天、过期前提醒</p>
+              <span class="cc-enter">进入 <span class="ar">→</span></span>
+            </a>
+            <a class="choice-card2" href="favorites.html">
+              <span class="ci"><svg class="ico "><use href="#i-heart"></use></svg></span>
+              <h3>我的收藏</h3>
+              <p>存过的药和病种，不用每次重新搜</p>
+              <span class="cc-enter">进入 <span class="ar">→</span></span>
+            </a>
+            <a class="choice-card2" href="profile.html">
+              <span class="ci"><svg class="ico "><use href="#i-clipboard"></use></svg></span>
+              <h3>健康档案</h3>
+              <p>过敏史、慢性病、身高体重，问诊时自动带上</p>
+              <span class="cc-enter">进入 <span class="ar">→</span></span>
+            </a>
+            <a class="choice-card2" href="feedback.html">
+              <span class="ci"><svg class="ico "><use href="#i-feedback"></use></svg></span>
+              <h3>意见反馈</h3>
+              <p>哪里不好用、哪里说错了，直接写给我们</p>
+              <span class="cc-enter">进入 <span class="ar">→</span></span>
+            </a>
+            <a class="choice-card2" href="records.html">
+              <span class="ci"><svg class="ico "><use href="#i-chat"></use></svg></span>
+              <h3>问诊记录</h3>
+              <p>和 AI、和医生的对话都留着，复诊时能翻</p>
+              <span class="cc-enter">进入 <span class="ar">→</span></span>
+            </a>
+          </div>
+        </div>
+
+        <section class="home-feeds">
+          <div class="feed-panel">
+            <div class="feed-head">
+              <h3>常用药品</h3>
+              <a href="medicine.html">全部 154 种 →</a>
+            </div>
+            <div class="feed-list" id="homeMedList"><p class="empty-tip">加载中…</p></div>
+          </div>
+          <div class="feed-panel">
+            <div class="feed-head">
+              <h3>热门病种</h3>
+              <a href="disease.html">全部 32 类 →</a>
+            </div>
+            <div class="feed-list" id="homeDiseaseList"><p class="empty-tip">加载中…</p></div>
+          </div>
+        </section>
+
+        <section class="home-tools">
+          <div class="tool-panel">
+            <h3>BMI 快速自测</h3>
+            <p class="tool-sub">输入身高体重，先看自己落在哪个区间</p>
+            <div class="bmi-form">
+              <label>身高（cm）<input id="bmiHeight" type="number" min="80" max="250" placeholder="168" /></label>
+              <label>体重（kg）<input id="bmiWeight" type="number" min="20" max="300" placeholder="62" /></label>
+              <button class="btn btn-primary" id="bmiCalc" type="button">计算</button>
+            </div>
+            <div class="bmi-result" id="bmiResult">结果会显示在这里。BMI 只反映身高与体重的关系，不替代医生诊断。</div>
+          </div>
+          <div class="tool-panel">
+            <h3>常见症状自查</h3>
+            <p class="tool-sub">点一个症状，直接看相关病种与用药</p>
+            <div class="symptom-chips">
+              <a href="search.html?q=发热">发热</a>
+              <a href="search.html?q=咳嗽">咳嗽</a>
+              <a href="search.html?q=头痛">头痛</a>
+              <a href="search.html?q=腹痛">腹痛</a>
+              <a href="search.html?q=腹泻">腹泻</a>
+              <a href="search.html?q=失眠">失眠</a>
+              <a href="search.html?q=皮疹">皮疹</a>
+              <a href="search.html?q=过敏">过敏</a>
+              <a href="search.html?q=咽痛">咽痛</a>
+              <a href="search.html?q=便秘">便秘</a>
+            </div>
+            <ul class="tool-notes">
+              <li>体温 ≥ 38.5℃ 超过 3 天，或伴意识改变，尽快就医</li>
+              <li>胸痛、呼吸困难、单侧肢体无力，直接急诊</li>
+              <li>症状反复 2 周以上，建议挂专科门诊查因</li>
+            </ul>
+            <a class="tool-more" href="doctor.html">症状说不清？直接问智能医生 →</a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <div id="appFooter"></div>
+    <script src="app.js"></script>
+    <script src="assistant-pet.js" defer></script>
+  </body>
+</html>

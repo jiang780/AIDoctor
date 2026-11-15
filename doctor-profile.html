@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>医生用户中心 - AI 智能医生</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <div class="logo">
+          <span class="logo-mark">+</span>
+          <span>AIDoctor · 医生端</span>
+        </div>
+        <div class="header-actions">
+          <a class="user-center-link" href="doctor-console.html">接诊台</a>
+          <a class="user-center-link" href="doctor-prescribe.html">用药方案</a>
+          <button id="doctorLogoutBtn" class="logout-btn" type="button">退出登录</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-banner">
+        <div class="container">
+          <span class="eyebrow">用户中心</span>
+          <h1>医生信息</h1>
+        </div>
+      </section>
+
+      <section class="content-section page-section">
+        <div class="container doctor-layout">
+          <div class="doctor-box">
+            <h2 class="record-title">我的信息</h2>
+            <div id="doctorInfoBox" class="doctor-info"></div>
+          </div>
+          <a class="primary-btn full" href="doctor-console.html">返回接诊台</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="assistant-pet.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>医生注册 - AI 智能医生</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="login-body">
+    <div class="login-shell">
+      <div class="login-card">
+        <div class="login-header">
+          <div class="logo login-logo">
+            <span class="logo-mark">+</span>
+            <span>AIDoctor · 医生端</span>
+          </div>
+          <p>医生注册</p>
+        </div>
+
+        <form id="doctorRegisterForm" class="login-form auth-form active">
+          <div class="form-header">
+            <h2>医生注册</h2>
+          </div>
+          <div class="form-group">
+            <input name="name" type="text" placeholder="真实姓名" />
+          </div>
+          <div class="form-group">
+            <input name="username" type="text" placeholder="医生账号" />
+          </div>
+          <div class="form-group">
+            <input name="password" type="password" placeholder="密码" />
+          </div>
+          <div class="form-group">
+            <select name="specialty" class="specialty-select">
+              <option value="">选择接诊方向</option>
+            </select>
+          </div>
+          <button type="submit" class="primary-btn login-btn">注册</button>
+          <p id="doctorRegisterMsg" class="login-error" aria-live="polite"></p>
+          <p class="demo-tip">
+            已有账号？<a href="doctor-login.html" style="color: var(--primary-dark)">医生登录</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assistant-pet.js" defer></script>
+  </body>
+</html>

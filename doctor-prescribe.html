@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>用药方案 - AIDoctor · 医生端</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <div class="logo">
+          <span class="logo-mark">+</span>
+          <span>AIDoctor · 医生端</span>
+        </div>
+        <div class="header-actions">
+          <a class="user-center-link" href="doctor-console.html">接诊台</a>
+          <a class="user-center-link" href="doctor-profile.html">个人中心</a>
+          <button id="doctorLogoutBtn" class="logout-btn" type="button">退出登录</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-banner has-photo">
+        <div class="container">
+          <span class="eyebrow">医生工作台</span>
+          <h1>给患者下达用药方案</h1>
+          <p class="banner-sub">选定患者、挑好药品、设好时间，方案会直接进入患者的家庭药箱与用药提醒，患者端右上角同时收到通知。</p>
+        </div>
+      </section>
+
+      <section class="content-section page-section">
+        <div class="container rx-layout">
+          <div class="rx-card rx-patients">
+            <h2 class="record-title">选择患者</h2>
+            <input id="rxPatientSearch" class="rx-input" placeholder="搜索姓名或账号" autocomplete="off" />
+            <div id="rxPatientList" class="rx-patient-list">
+              <p class="record-empty">加载中…</p>
+            </div>
+          </div>
+
+          <div class="rx-card">
+            <h2 class="record-title">开具用药方案</h2>
+            <div class="rx-selected" id="rxSelected">尚未选择患者，请先在左侧点选一位</div>
+            <div class="rx-member-wrap" id="rxMemberWrap" hidden>
+              <span class="rx-member-label">给哪位家庭成员开药</span>
+              <div class="rx-member-chips" id="rxMemberChips"></div>
+            </div>
+            <div class="rx-safety-strip" id="rxPatientSafety" hidden></div>
+            <form id="rxForm" class="rx-form" autocomplete="off">
+              <div class="rx-field">
+                <label for="rxMedicine">药品名称</label>
+                <input id="rxMedicine" list="rxMedicineOptions" placeholder="输入或选择药品，如 对乙酰氨基酚缓释片" />
+                <datalist id="rxMedicineOptions"></datalist>
+              </div>
+              <div class="rx-safety" id="rxSafety" hidden></div>
+              <div class="rx-row">
+                <div class="rx-field">
+                  <label for="rxDosage">每次剂量</label>
+                  <input id="rxDosage" placeholder="如 1 片 / 10ml" />
+                </div>
+                <div class="rx-field">
+                  <label for="rxStart">开始日期</label>
+                  <div class="rx-date-field">
+                    <input id="rxStart" type="text" class="rx-date-input" placeholder="年-月-日" inputmode="numeric" autocomplete="off" />
+                    <span class="rx-date-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <input id="rxStartNative" type="date" class="rx-date-native" tabindex="-1" aria-hidden="true" />
+                  </div>
+                </div>
+                <div class="rx-field">
+                  <label for="rxEnd">结束日期</label>
+                  <div class="rx-date-field">
+                    <input id="rxEnd" type="text" class="rx-date-input" placeholder="年-月-日(可选)" inputmode="numeric" autocomplete="off" />
+                    <span class="rx-date-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <input id="rxEndNative" type="date" class="rx-date-native" tabindex="-1" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
+              <div class="rx-field">
+                <label for="rxTimes">服药时间（24 小时制，逗号分隔）</label>
+                <input id="rxTimes" value="08:00,20:00" placeholder="08:00,12:00,20:00" />
+                <div class="rx-chips">
+                  <button type="button" class="rx-chip" data-times="08:00">每日一次</button>
+                  <button type="button" class="rx-chip" data-times="08:00,20:00">一日两次</button>
+                  <button type="button" class="rx-chip" data-times="08:00,12:00,20:00">一日三次</button>
+                  <button type="button" class="rx-chip" data-times="21:30">睡前一次</button>
+                </div>
+              </div>
+              <div class="rx-field">
+                <label for="rxNote">医嘱备注</label>
+                <textarea id="rxNote" rows="2" placeholder="如 饭后服用，服药期间忌酒，出现皮疹请停药"></textarea>
+              </div>
+              <div class="rx-actions">
+                <button class="primary-btn" type="submit" id="rxSubmit">下达方案</button>
+                <span class="rx-msg" id="rxMsg"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="rx-card rx-issued">
+            <div class="rx-issued-head">
+              <h2 class="record-title">我开出的方案</h2>
+              <span class="rx-count" id="rxCount"></span>
+            </div>
+            <div id="rxList" class="record-list">
+              <p class="record-empty">加载中…</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="assistant-pet.js" defer></script>
+  </body>
+</html>

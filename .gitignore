@@ -1,0 +1,46 @@
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+# ===== 上传 GitHub 时忽略（本地仍保留） =====
+# 个人/项目内部数据（记忆、可能的密钥）
+.workbuddy/
+# IntelliJ IDE 配置
+.idea/
+*.iml
+out/
+# 含密码/密钥的本地配置，切勿上传
+config.properties
+# 数据库备份（可能含真实数据）
+db/*backup*
+# 开发过程备份文件（不进版本库）
+*.bak*
+# 运行时日志与开发截图（非项目产物）
+logs/
+samples/
